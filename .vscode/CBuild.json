@@ -1,4 +1,4 @@
-{
+go list -f '{{.Target}}'{
   "CBuild.cCompilerPath": "/usr/bin/x86_64-linux-gnu-gcc",
   "CBuild.cppCompilerPath": "/usr/bin/x86_64-linux-gnu-g++",
   "CBuild.debuggerPath": "/usr/bin/gdb",
