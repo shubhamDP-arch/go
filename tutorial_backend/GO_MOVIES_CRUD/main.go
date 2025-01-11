@@ -7,7 +7,6 @@ import (
 	"math/rand"
 	"net/http"
 	"strconv"
-	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -83,7 +82,7 @@ func deleteMovie(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
+
 	r := mux.NewRouter()
 
 	movies = append(movies, Movie{ID: "1", Isbn: "412324", Title: "Movie One", Director: &Director{Firstname: "Jaq", Lastname: "En"}})
