@@ -21,12 +21,17 @@ func main() {
 	case "init":
 		commands.Init()
 	case "add":
-		commands.Add()
+		
+		if len(os.Args) < 3{
+			fmt.Println("add files loude")
+			os.Exit(1)
+		}
+		commands.Add(os.Args[2:])
 	case "commit":
-		//this is horseshit
-		fooCmd := flag.NewFlagSet("commit", flag.ExitOnError)
-		message := fooCmd.String("m", "foo", "Commit message")
-		fooCmd.Parse(os.Args[2:])
+
+		messageCmd := flag.NewFlagSet("commit", flag.ExitOnError)
+		message := messageCmd.String("m", "foo", "Commit message")
+		messageCmd.Parse(os.Args[2:])
 
 		if *message == "" {
 			log.Fatal("Error idiot ")
