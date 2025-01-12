@@ -70,7 +70,7 @@ func readIndex(indexPath string) map[string]string {
 		line := scanner.Text()
 		parts := strings.SplitN(line, " ", 2)
 		if len(parts) == 2 {
-			stagedFiles[parts[0]] = parts[1] // file path -> hash
+			stagedFiles[parts[0]] = parts[1] 
 		}
 	}
 
